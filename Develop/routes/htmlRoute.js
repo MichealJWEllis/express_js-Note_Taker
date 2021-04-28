@@ -6,11 +6,11 @@ module.exports = function(app) {
     app.get('/notes', (req, res) => {
       res.sendFile(path.join(__dirname, './Develop/public/notes.html'))
   })
+  // return index page defaults
     app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './Develp/public/index.html'))
   })
-  // return index page default
     app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, './Develop/public/index.html'))
+    res.sendFile(path.join(__dirname, './Develop/public/index.html'))
   })    
 }
