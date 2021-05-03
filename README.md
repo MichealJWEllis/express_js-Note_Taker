@@ -1,87 +1,87 @@
+# Project express_js-Note_Taker
 
-  # Project  express_js-Note_Taker
-  
-  ## Badge
+## Badge
 
-  # ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-black.svg)
+# ![License: Unlicense](https://img.shields.io/badge/license-Unlicense-black.svg)
 
-  ## Table of Contents
+## Table of Contents
 
-  * [Description](#description)
-  
-  * [Motivation](#motivation)
+- [Description](#description)
 
-  * [Code Used](#code_used)
+- [Motivation](#motivation)
 
-  * [Screenshot](#screenshot)
+- [Code Used](#code_used)
 
-  * [License](#license)
+- [Screenshot](#screenshot)
 
-  * [Contributed](#contributed)
+- [License](#license)
 
-  * [Tests](#tests)
+- [Contributed](#contributed)
 
-  * [Questions](#questions)
+- [Tests](#tests)
 
-  ---
+- [Questions](#questions)
 
-  ## Description
+---
 
-  This application will allow for a small business owner to write and save notes as to organize and keep track of tasks.
+## Description
 
-  ---
+This application will allow for a small business owner to write and save notes as to organize and keep track of tasks.
 
-  ## Motivation
+---
 
-  This application was created out of necessity to allow for better organization.
+## Motivation
 
-  ---
+This application was created out of necessity to allow for better organization.
 
-  ## Code_Used
+---
 
-  JavaScript, NodeJS, ExpressJS
+## Code_Used
 
-  ---
+JavaScript, NodeJS, ExpressJS
 
-  ## Screenshot
+---
 
-  ![express_js-Note_Taker](https://nameless-woodland-32392.herokuapp.com/notes)
+## Screenshot
 
-  ---
+![express_js-Note_Taker](public\assets\images\MainPage.PNG)
 
-  ## License
+---
 
-  Link: (https://opensource.org/licenses/Unlicense)
+## License
 
-  THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS (Unlicense) PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
+Link: (https://opensource.org/licenses/Unlicense)
 
-  ---
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS (Unlicense) PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
 
-  ## Contributed:
+---
 
-  I contributed all code for this application.
+## Contributed:
 
-  ---
+I contributed all code for this application.
 
-  ## Tests: 
+---
 
-  none
+## Tests:
 
-  ## Questions
+none
 
-  If you have any questions on this repo, please contact mellis.eriecon@gmail.com.
+## Questions
 
-  ## GitHub
+If you have any questions on this repo, please contact mellis.eriecon@gmail.com.
 
-  * [GitHub Repository Link: express_js-Note_Taker](https://github.com/michealjwellis/express_js-Note_Taker)
+## GitHub
 
-  * [GitHub Profile Link: michealjwellis](https://github.com/michealjwellis)
+- [GitHub Repository Link: express_js-Note_Taker](https://github.com/michealjwellis/express_js-Note_Taker)
 
-  ## CONTRIBUTION:
+- [GitHub Profile Link: michealjwellis](https://github.com/michealjwellis)
 
-  Made with ❤️ by Micheal Jw Ellis Sr.
+- [Heroku Live Link](https://nameless-woodland-32392.herokuapp.com/notes)
 
-  ### Mentions: 
+## CONTRIBUTION:
 
-  No mentions provided
+Made with ❤️ by Micheal Jw Ellis Sr.
 
+### Mentions:
+
+No mentions provided
