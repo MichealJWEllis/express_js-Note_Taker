@@ -6,7 +6,7 @@ const path = require('path')
 
 function writeNotes(note) {
   note = JSON.stringify(note)
-  console.log(note)
+  // console.log(note)
 
   fs.writeFileSync('db/db.json', note, function (e) {
     if (e) {
@@ -46,103 +46,33 @@ router.post('/notes', function (req, res) {
 
 })
 
-router.put('/notes:id', function (req, res) {
-  const noteId = parseInt(req.params.id)
-  const body = req.body
-  const noteSearch = notesDb[noteId]
-
-  if (!noteSearch) {
-    return res
-      .status(404)
+// not working! 
+router.put('/notes', function (req, res) {
+  // console.log(notesDb)
+  if (notesDb.length == 0) {
+    req.body.id = "0";
+  } else {
+    req.body.id = notesDb.length.toString()
   }
   notesDb.push(req.body)
   res.json(req.body)
   writeNotes(notesDb)
+
 })
 
-// exports.update = function(req, res) {
-//   var id = parseInt(req.params.id)
-//   var noted = req.body
-//   if(notesDb[id] != null){
-//     notesDb[id] = noted
-//     res.end(JSON.stringify(noted, null, 4))
-//   } else {
-//     res.end(JSON.stringify(noted, null, 4))
-//   }
-// }
-
-// router.put('/notes/:id', notesDb.update)
-
-
-
-// router.delete("/notes/:id", (req, res) => {
-//   const id = parseInt(req.params.id);
-//   fs.readFile(path.join(__dirname, "/db/db.json"), "utf8", (err, data) => {
-//       if (err) throw err;
-//       const db = JSON.parse(data);
-//       const newDB = [];
-
-//       for(let i = 0; i < db.length; i++)
-//       {
-//           if (i !== id)
-//           {
-//               const newNote = {
-//                   title: db[i].title,
-//                   text: db[i].text,
-//                   id: newDB.length
-//               };
-
-//               newDB.push(newNote);
-//           }
-//       }
-
-//       fs.writeFile(path.join(__dirname, "/db/db.json"), JSON.stringify(newDB, null, 2), (err) => {
-//           if (err) throw err;
-//           res.json(req.body);
-//       });
-//   });
-// });
 
 router.delete('/notes/:id', (req, res) => {
   console.log('Got a Delete request')
   const id = req.params.id
-  const notes = notesDb[id]
-  console.log(notes)
+  // const notes = notesDb[id]
+  // console.log(notes)
   // console.log(notesDb)
   const filter = notesDb.filter((note) => note.id !== id)
   // console.log(notesDb)
-  console.log(filter)
+  // console.log(filter)
   writeNotes(filter)
+  location.reload()
 })
-
-
-// for(i=0; i < notes.length; i++){
-
-//   console.log(notes.length)
-
-// }
-// if(!notes) {
-//   return res 
-//           .status(404)
-//           .json({error: 'Note not found'})
-// }
-
-// delete notesDb[id]
-// notesDb.push(req.body)
-// res.json(req.body)
-// writeNotes(notesDb)
-// return res.status(204)
-
-// Notes.remove({
-//   id: req.params.id
-// }), function (err, user) {
-//   if (err) {
-//     return res.send(err)
-//   }
-//   res.json({ message: 'Deleted'})
-// }
-
-
 
 
 
