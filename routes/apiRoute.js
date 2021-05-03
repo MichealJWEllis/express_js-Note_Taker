@@ -63,11 +63,23 @@ router.post('/notes', function (req, res) {
 
 
 router.delete('/notes/:id', (req, res) => {
-  console.log('Got a Delete request')
-  const id = req.params.id
-  const filter = notesDb.filter((note) => note.id !== id)
-  writeNotes(filter)
-  location.reload()
+  let id = req.params.id.toString();
+  console.log(id);
+  // Loop for array match
+  for (i = 0; i < notesDb.length; i++) {
+
+    if (notesDb[i].id == id) {
+      console.log("match!");
+      // gets deleted note
+      res.send(notesDb[i]);
+
+      // Removes the deleted note
+      notesDb.splice(i, 1);
+      break;
+    }
+  }
+  // Write notes data to database
+  writeNotes(notesDb);
 })
 
 
