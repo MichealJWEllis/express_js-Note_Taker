@@ -14,17 +14,18 @@ function writeNotes(note) {
     }
   })
 }
+// Not working! 
 
-function readNotes(note) {
-  note = JSON.stringify(note)
-  console.log(note)
+// function readNotes(note) {
+//   note = JSON.stringify(note)
+//   console.log(note)
 
-  fs.readFile('db/db.json', note, function (e) {
-    if (e) {
-      return console.log(e)
-    }
-  })
-}
+//   fs.readFile('db/db.json', note, function (e) {
+//     if (e) {
+//       return console.log(e)
+//     }
+//   })
+// }
 
 router.get('/notes', function (_req, res) {
   fs.readFile(path.join(__dirname, '../db/db.json'), 'utf8', (err, data) => {
@@ -46,30 +47,25 @@ router.post('/notes', function (req, res) {
 
 })
 
-// not working! 
-router.put('/notes', function (req, res) {
-  // console.log(notesDb)
-  if (notesDb.length == 0) {
-    req.body.id = "0";
-  } else {
-    req.body.id = notesDb.length.toString()
-  }
-  notesDb.push(req.body)
-  res.json(req.body)
-  writeNotes(notesDb)
+// Not working! 
 
-})
+// router.put('/notes', function (req, res) {
+//   // console.log(notesDb)
+//   if (notesDb.length == 0) {
+//     req.body.id = "0";
+//   } else {
+//     req.body.id = notesDb.length.toString()
+//   }
+//   notesDb.push(req.body)
+//   res.json(req.body)
+//   writeNotes(notesDb)
+// })
 
 
 router.delete('/notes/:id', (req, res) => {
   console.log('Got a Delete request')
   const id = req.params.id
-  // const notes = notesDb[id]
-  // console.log(notes)
-  // console.log(notesDb)
   const filter = notesDb.filter((note) => note.id !== id)
-  // console.log(notesDb)
-  // console.log(filter)
   writeNotes(filter)
   location.reload()
 })
