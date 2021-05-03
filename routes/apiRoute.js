@@ -26,7 +26,7 @@ function readNotes(note) {
   })
 }
 
-router.get('/notes', function (req, res) {
+router.get('/notes', function (_req, res) {
   fs.readFile(path.join(__dirname, '../db/db.json'), 'utf8', (err, data) => {
     if (err) throw err
     res.json(JSON.parse(data))
@@ -107,38 +107,41 @@ router.delete('/notes/:id', (req, res) => {
   console.log('Got a Delete request')
   const id = req.params.id
   const notes = notesDb[id]
-
   console.log(notes)
-
-  
-  
-
-  // for(i=0; i < notes.length; i++){
-
-  //   console.log(notes.length)
-
-  // }
-  // if(!notes) {
-  //   return res 
-  //           .status(404)
-  //           .json({error: 'Note not found'})
-  // }
-
-  // delete notesDb[id]
-  // notesDb.push(req.body)
-  // res.json(req.body)
-  // writeNotes(notesDb)
-  // return res.status(204)
-
-  // Notes.remove({
-  //   id: req.params.id
-  // }), function (err, user) {
-  //   if (err) {
-  //     return res.send(err)
-  //   }
-  //   res.json({ message: 'Deleted'})
-  // }
+  // console.log(notesDb)
+  const filter = notesDb.filter((note) => note.id !== id)
+  // console.log(notesDb)
+  console.log(filter)
+  writeNotes(filter)
 })
+
+
+// for(i=0; i < notes.length; i++){
+
+//   console.log(notes.length)
+
+// }
+// if(!notes) {
+//   return res 
+//           .status(404)
+//           .json({error: 'Note not found'})
+// }
+
+// delete notesDb[id]
+// notesDb.push(req.body)
+// res.json(req.body)
+// writeNotes(notesDb)
+// return res.status(204)
+
+// Notes.remove({
+//   id: req.params.id
+// }), function (err, user) {
+//   if (err) {
+//     return res.send(err)
+//   }
+//   res.json({ message: 'Deleted'})
+// }
+
 
 
 
