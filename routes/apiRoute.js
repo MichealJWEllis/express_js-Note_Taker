@@ -27,7 +27,7 @@ function writeNotes(note) {
 //   })
 // }
 
-router.get('/notes', function (_req, res) {
+router.get('/notes', function (req, res) {
   fs.readFile(path.join(__dirname, '../db/db.json'), 'utf8', (err, data) => {
     if (err) throw err
     res.json(JSON.parse(data))
@@ -69,7 +69,7 @@ router.delete('/notes/:id', (req, res) => {
   for (i = 0; i < notesDb.length; i++) {
 
     if (notesDb[i].id == id) {
-      console.log("match!");
+      console.log("found!");
       // gets deleted note
       res.send(notesDb[i]);
 
